@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>WDD131 - Place Page - Nigeria</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Nigeria</h1>
+    </header>
+    <main>
+        <picture>
+            <soure
+            srcset="images/nigeria-small.webp"
+            media="(max-width:768px)">
+            <img src="images/nigeria-large.webp" alt="Beautiful scenery of Nigeria">
+        </picture>
+        <section class="card data">
+            <h2>Data</h2>
+            <p><strong>Area:</strong>923,768km2</p>
+            <p><strong>Population:</strong>230 million+</p>
+            <p><strong>Capital:</strong>Abuja</p>
+            <p><strong>Language:</strong>English</p>
+            <p><strong>Currency:</strong>Naira</p>
+            <p><strong>Time Zone</strong>UTC+1</p>
+        </section>
+        <section class="card weather">
+            <h2>Weather</h2>
+            <img src="images/weather.webp" alt="Weather icon" class="mobile-icon">
+            <p><strong>Temperature:</strong>30</p>
+            <p><strong>Conditions:</strong>Partly Cloudy:</p>
+            <p><strong>Wind:</strong>10 km/h</p>
+            <p><strong>Wind Chill:</strong><span id="windchill"></span></p>
+
+
+        </section>
+    </main>
+    <footer>
+        <p>
+            ©;
+            <span id="year"></span>
+            🌴 Eneche John 🌴 Nigeria
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
