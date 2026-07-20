@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A webpage about Nigeria including information about its geography, population, and weather.">
+    <meta name="autor" content="Eneche John">
     <title>WDD131 - Place Page - Nigeria</title>
     <link rel="stylesheet" href="styles/place.css">
     <script src="scripts/place.js" defer></script>
@@ -12,14 +15,17 @@
         <h1>Nigeria</h1>
     </header>
     <main>
-        <picture>
-            <soure
+        <div class="hero">
+            <picture>
+                <soure
             srcset="images/nigeria-small.webp"
             media="(max-width:768px)">
-            <img src="images/nigeria-large.webp" alt="Beautiful scenery of Nigeria">
-        </picture>
+                <img src="images/nigeria-large.webp" alt="Beautiful scenery of Nigeria">
+            </picture>
+        </div>
         <section class="card data">
-            <h2>Data</h2>
+            <h2>Country Data</h2>
+
             <p><strong>Area:</strong>923,768km2</p>
             <p><strong>Population:</strong>230 million+</p>
             <p><strong>Capital:</strong>Abuja</p>
@@ -29,10 +35,11 @@
         </section>
         <section class="card weather">
             <h2>Weather</h2>
-            <img src="images/weather.webp" alt="Weather icon" class="mobile-icon">
+            
+            <img src="images/weather.webp" alt="Weather icon" class="weather-icon">
             <p><strong>Temperature:</strong>30</p>
             <p><strong>Conditions:</strong>Partly Cloudy:</p>
-            <p><strong>Wind:</strong>10 km/h</p>
+            <p><strong>Wind Speed:</strong>10 km/h</p>
             <p><strong>Wind Chill:</strong><span id="windchill"></span></p>
 
 
@@ -47,3 +54,4 @@
         <p id="lastModified"></p>
     </footer>
 </body>
+</html>
