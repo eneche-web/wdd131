@@ -1,0 +1,157 @@
+:root{
+    --primary-color:#1b4965;
+    --secondary-color:#5fa8d3;
+    --accent-color: #cae9ff;
+    --background-color: #f7f9fb;
+    --white: #ffffff;
+    --dark: #222222;
+    --shadow: rgba(0, 0, 0, 0.15;)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+header{
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 3px 8px var(--shadow);
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+}
+
+header h1 {
+    font-family: "Merriweather", serif;
+    text-align: center;
+    margin-bottom: .75rem;
+}
+
+
+#menu {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    margin-bottom: .5rem;
+}
+
+#menu::before{
+    content: "⏬";
+}
+
+#menu.open::before{
+    content: "❎";
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.navigation a{
+    display: none;
+    color: #ffffff;
+    text-decoration: none;
+    padding: .8rem;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.navigation a:hover{
+    background: var(--secondary-color);
+}
+
+.navigation.open a{
+    display: block;
+}
+
+main{
+    max-width: 11000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: "Merriweather", serif;
+    color: var(--primary-color);
+}
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.temple-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px var(--shadow);
+    transition: transform .3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+.temple-card h3 {
+    background: var(--primary-color);
+    color: white;
+    padding: .8rem;
+    text-align: center;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content p {
+    margin: .5rem 0;
+}
+
+.card-content strong {
+    color: var(--primary-color);
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+footer{
+    margin-top: 3rem;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+footer p {
+    margin: .3rem;
+}
+
+a:focus, button:focus {
+    outline: 3px solid gold;
+    outline-offset: 2px;
+}
