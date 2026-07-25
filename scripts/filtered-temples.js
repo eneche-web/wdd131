@@ -18,7 +18,7 @@ const temples = [
         templeName: "Aba Nigeria",
         location: "Aba, Nigeria",
         dedication: "2005, August, 7",
-        area: "11500",
+        area: 11500,
         imageUr1: "https://content.churchofjesuschhrist.org/templesIdsorg/bc/Temples/photo-galleries/aba-nigeria/400*250/aba-nigeria-temple-Ids-273999-wallpaper.jpg"
     },
 
@@ -26,7 +26,7 @@ const temples = [
         templeName: "Manti Utah",
         location: "Manti Utah, United States",
         dedication: "1888, May, 21",
-        area: "74792",
+        area: 74792,
         imageUr1: "https://content.churchofjesuschrist.org/templeIdsorg/bc/Temples/photo-galleries/manti-utah/400*250/manti-temple-768192-wallpaper.jpg"
 
     },
@@ -35,7 +35,7 @@ const temples = [
         templeName: "Payson Utah",
         location: "Payson, Utah, United States",
         dedication: "2015, june, 7",
-        area: "96630",
+        area: 96630,
         imageUr1: "https://content.churchofjesuschrist.org/templesorg/bc/Temples/photo-galleries/payson-utah/400*225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
     },
 
@@ -43,7 +43,7 @@ const temples = [
         templeName: "Yigo Guam",
         location: "Yigo, Guam",
         dedication: "2020, May, 2",
-        area: "6861",
+        area: 6861,
         imageUr1: "https://content.churchofjesuschrist.org/templesIdsorg/bc/Temples/photo-galleries/yigo-guam/400*250/yigo_guam_tample_2.jpg"
     },
 
@@ -51,7 +51,7 @@ const temples = [
         templeName: "Washington D.C.",
         location: "Kensington, Maryland, United States",
         dedication: "1974, November, 19",
-        area: "156558",
+        area: 156558,
         imageUr1: "https://content.churchofjesuschrist.org/templesLdsorg/bc/Temples/photo-galleries/washington-dc/400*250/washington_dc_temple-exterior-2.jpg"
 
     },
@@ -60,7 +60,7 @@ const temples = [
         templeName: "Lima Peru",
         location: "Lima, Peru",
         dedication: "1986, January, 10",
-        area: "9600",
+        area: 9600,
         imageUr1: "https://content.churchofjesuschrist.org/templesIdsorg/bc/Temples/photo-galleries/lima-peru/400*250/lima-peru-temple-evening-1075606-wallpaper.jpg"
     },
 
@@ -68,7 +68,7 @@ const temples = [
         templeName: "Mexico City Mexoco",
         location: "Mexico City, Mexico",
         dedication: "1983, December, 2",
-        area: "116642",
+        area: 116642,
         imageUr1: "https://content.churchofjesuschrist.org/templesIdsorg/bc/Temples/photo-galleries/mexico-city-mexico/400*250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
 
