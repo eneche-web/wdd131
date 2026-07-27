@@ -14,88 +14,87 @@ menuButton.addEventListener('click', () => {
 // Temple Data
 
 const temples = [
-    {
-        templeName: "Aba Nigeria",
-        location: "Aba, Nigeria",
-        dedication: "2005, August, 7",
-        area: 11500,
-        imageUr1: "https://content.churchofjesuschhrist.org/templesIdsorg/bc/Temples/photo-galleries/aba-nigeria/400❎250/aba-nigeria-temple-Ids-273999-wallpaper.jpg"
-    },
 
-    {
-        templeName: "Manti Utah",
-        location: "Manti Utah, United States",
-        dedication: "1888, May, 21",
-        area: 74792,
-        imageUr1: "https://content.churchofjesuschrist.org/templeIdsorg/bc/Temples/photo-galleries/manti-utah/400*250/manti-temple-768192-wallpaper.jpg"
+{
+    templeName: "Aba Nigeria",
+    location: "Aba, Nigeria",
+    dedication: "2005-08-07",
+    area: 11500,
+    imageUrl: "images/aba.jpg"
+},
 
-    },
+{
+    templeName: "Manti Utah",
+    location: "Manti, Utah, United States",
+    dedication: "1888-05-21",
+    area: 74792,
+    imageUrl: "images/manti.jpg"
+},
 
-    {
-        templeName: "Payson Utah",
-        location: "Payson, Utah, United States",
-        dedication: "2015, june, 7",
-        area: 96630,
-        imageUr1: "https://content.churchofjesuschrist.org/templesorg/bc/Temples/photo-galleries/payson-utah/400*225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
-    },
+{
+    templeName: "Payson Utah",
+    location: "Payson, Utah, United States",
+    dedication: "2015-06-07",
+    area: 96630,
+    imageUrl: "images/payson.jpg"
+},
 
-    {
-        templeName: "Yigo Guam",
-        location: "Yigo, Guam",
-        dedication: "2020, May, 2",
-        area: 6861,
-        imageUr1: "https://content.churchofjesuschrist.org/templesIdsorg/bc/Temples/photo-galleries/yigo-guam/400*250/yigo_guam_tample_2.jpg"
-    },
+{
+    templeName: "Yigo Guam",
+    location: "Yigo, Guam",
+    dedication: "2020-05-02",
+    area: 6861,
+    imageUrl: "images/yigo.jpg"
+},
 
-    {
-        templeName: "Washington D.C.",
-        location: "Kensington, Maryland, United States",
-        dedication: "1974, November, 19",
-        area: 156558,
-        imageUr1: "https://content.churchofjesuschrist.org/templesLdsorg/bc/Temples/photo-galleries/washington-dc/400*250/washington_dc_temple-exterior-2.jpg"
+{
+    templeName: "Washington D.C.",
+    location: "Kensington, Maryland",
+    dedication: "1974-11-19",
+    area: 156558,
+    imageUrl: "images/washington.jpeg"
+},
 
-    },
+{
+    templeName: "Lima Peru",
+    location: "Lima, Peru",
+    dedication: "1986-01-10",
+    area: 9600,
+    imageUrl: "images/lima.jpg"
+},
 
-    {
-        templeName: "Lima Peru",
-        location: "Lima, Peru",
-        dedication: "1986, January, 10",
-        area: 9600,
-        imageUr1: "https://content.churchofjesuschrist.org/templesIdsorg/bc/Temples/photo-galleries/lima-peru/400*250/lima-peru-temple-evening-1075606-wallpaper.jpg"
-    },
+{
+    templeName: "Mexico City",
+    location: "Mexico City, Mexico",
+    dedication: "1983-12-02",
+    area: 116642,
+    imageUrl: "images/mexico.jpg"
+},
 
-    {
-        templeName: "Mexico City Mexoco",
-        location: "Mexico City, Mexico",
-        dedication: "1983, December, 2",
-        area: 116642,
-        imageUr1: "https://content.churchofjesuschrist.org/templesIdsorg/bc/Temples/photo-galleries/mexico-city-mexico/400*250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
-    },
+{
+    templeName: "Accra Ghana",
+    location: "Accra, Ghana",
+    dedication: "2004-01-11",
+    area: 17500,
+    imageUrl: "images/accra.jpg"
+},
 
-    {
-        templeName: "Accra Ghana",
-        location: "Accra, Ghana",
-        dedication: "2004, January, 11",
-        area: 17500,
-        imageUr1: "https://churchofjesuschrist.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-1065.jpg"
-    },
+{
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedication: "2019-03-10",
+    area: 41010,
+    imageUrl: "images/rome.jpg"
+},
 
-    {
-        templeName: "Rome Italy",
-        location: "Rome, Italy",
-        dedication: "2019,  March, 10",
-        area: 41010,
-        imageUr1: "https;//churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-45284.jpg"
+{
+    templeName: "Salt Lake",
+    location: "Salt Lake City, Utah",
+    dedication: "1893-04-06",
+    area: 253000,
+    imageUrl: "images/salt-lake.jpg"
+}
 
-    },
-
-    {
-        templeName: "Salt Lake",
-        location: "Salt Lake City, Utah",
-        dedication: "1893, April, 6",
-        area: 253000,
-        imageUr1: "https://churchofjesustemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-3776.jpg"
-    }
 ];
 
 const templeGrid = document.querySelector(".temple-grid");
@@ -112,67 +111,46 @@ const smallLink = document.querySelector("#small");
  - The array of the temples to display.
  */
 
-function
-displayTemples(filteredTemples) {
+function displayTemples(filteredTemples) {
 
-    // Clear any existing temple cards
     templeGrid.innerHTML = "";
 
-    // Loop through each temple object
     filteredTemples.forEach((temple) => {
 
-        // Create the card
         const card = document.createElement("section");
+        card.classList.add("temple-card");
 
         const name = document.createElement("h3");
         name.textContent = temple.templeName;
 
-        // Card content container
-
         const content = document.createElement("div");
         content.classList.add("card-content");
 
-        // Location
-
         const location = document.createElement("p");
-        location.innerHTML = '<strong>Location</strong> ${temple.location}';
-
-        // Dedication date
+        location.innerHTML = `<strong>Location:</strong> ${temple.location}`;
 
         const dedication = document.createElement("p");
-    dedication.innerHTML = `<strong>Dedicated:</strong> ${temple.dedication};`
+        dedication.innerHTML = `<strong>Dedicated:</strong> ${temple.dedication}`;
 
-        // Area
-
-        const area = document.createElement("p")
-        area.innerHTML = `<strong>Area:</strong> ${temple.area.toLocaleString()} square feet`;
-
-        // Image
+        const area = document.createElement("p");
+        area.innerHTML = `<strong>Area:</strong> ${temple.area.toLocaleString()} sq ft`;
 
         const image = document.createElement("img");
-        image.src = temple.imageUr1; image.alt = '${temple.templeName} Temple';
+
+        image.src = temple.imageUrl;
+        image.alt = `${temple.templeName} Temple`;
         image.loading = "lazy";
         image.width = 400;
         image.height = 250;
 
-        //Handle broken image links
-        image.onerror = function(){
+        image.onerror = function () {
             this.src = "images/placeholder.webp";
-            this.src = "Temple image unavailable";
+            this.alt = "Temple image unavailable";
         };
 
-        // Build or assembel the card
+        content.append(location, dedication, area);
 
-
-        content.appendChild(location);
-        content.appendChild(dedication);
-        content.appendChild(area);
-        card.appendChild(name);
-        card.appendChild(content);
-        card.appendChild(image);
-
-        // Add the card to the page
-
+        card.append(name, content, image);
 
         templeGrid.appendChild(card);
 
@@ -187,12 +165,14 @@ displayTemples(temples);
 const title = document.querySelector("#page-title");
 
 document.querySelector("#home").addEventListener("click", (event) =>{
+    event.preventDefault();
     title.textContent= "Home";
 
     displayTemples(temples);
 });
 
 document.querySelector("#old").addEventListener("click", (event) => {
+    event.preventDefault();
     title.textContent = "Old Temples";
     displayTemples(
         temples.filter(temple => new Date(temple.dedication).getFullYear() < 1900)
@@ -200,6 +180,7 @@ document.querySelector("#old").addEventListener("click", (event) => {
 });
 
 document.querySelector("#new").addEventListener("click", (event) => {
+    event.preventDefault();
     title.textContent = "New Temples";
     displayTemples(
         temples.filter(temple => new Date(temple.dedication).getFullYear() > 2000)
@@ -207,6 +188,7 @@ document.querySelector("#new").addEventListener("click", (event) => {
 });
 
 document.querySelector("#large").addEventListener("click", (event) => {
+    event.preventDefault();
     title.textContent = "Large Temples";
     displayTemples(
         temples.filter(temple => temple.area > 90000)
@@ -214,6 +196,7 @@ document.querySelector("#large").addEventListener("click", (event) => {
 });
 
 document.querySelector("#small").addEventListener("click", (event) => {
+    event.preventDefault();
     title.textContent = "Small Temples";
     displayTemples(
     temples.filter(temple => temple.area < 10000)
