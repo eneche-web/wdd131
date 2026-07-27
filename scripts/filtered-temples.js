@@ -19,7 +19,7 @@ const temples = [
         location: "Aba, Nigeria",
         dedication: "2005, August, 7",
         area: 11500,
-        imageUr1: "https://content.churchofjesuschhrist.org/templesIdsorg/bc/Temples/photo-galleries/aba-nigeria/400*250/aba-nigeria-temple-Ids-273999-wallpaper.jpg"
+        imageUr1: "https://content.churchofjesuschhrist.org/templesIdsorg/bc/Temples/photo-galleries/aba-nigeria/400❎250/aba-nigeria-temple-Ids-273999-wallpaper.jpg"
     },
 
     {
@@ -94,12 +94,12 @@ const temples = [
         location: "Salt Lake City, Utah",
         dedication: "1893, April, 6",
         area: 253000,
-        imageUr1: "https://churchofjesustemples.org/asset/img/temples/salt-lake-temple/salt-lake-temple-3776.jpg"
+        imageUr1: "https://churchofjesustemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-3776.jpg"
     }
 ];
 
 const templeGrid = document.querySelector(".temple-grid");
-const pageTitle = document.querySelector("#.page-title");
+const pageTitle = document.querySelector("#page-title");
 const homeLink = document.querySelector("#home");
 const oldLink = document.querySelector("#old");
 const newLink = document.querySelector("#new");
@@ -140,12 +140,12 @@ displayTemples(filteredTemples) {
         // Dedication date
 
         const dedication = document.createElement("p");
-        dedicated.innerHTML = '<strong>Dedicated:</strong> ${temple.dedicated}';
+    dedication.innerHTML = `<strong>Dedicated:</strong> ${temple.dedication};`
 
         // Area
 
-        const area = Document.createElement("p")
-        area.innerHTML = '<strong>Area:</strong> ${temple.area.toLocalString()} square feet';
+        const area = document.createElement("p")
+        area.innerHTML = `<strong>Area:</strong> ${temple.area.toLocaleString()} square feet`;
 
         // Image
 
@@ -165,7 +165,7 @@ displayTemples(filteredTemples) {
 
 
         content.appendChild(location);
-        content.appendChild(dedicated);
+        content.appendChild(dedication);
         content.appendChild(area);
         card.appendChild(name);
         card.appendChild(content);
@@ -184,7 +184,7 @@ displayTemples(temples);
 
 // Navigation Buttons
 
-const title = document.querySelector(".page-title");
+const title = document.querySelector("#page-title");
 
 document.querySelector("#home").addEventListener("click", (event) =>{
     title.textContent= "Home";
@@ -192,35 +192,37 @@ document.querySelector("#home").addEventListener("click", (event) =>{
     displayTemples(temples);
 });
 
-document.querySelector("#old").addEventListener("cllick", (event) => {
+document.querySelector("#old").addEventListener("click", (event) => {
     title.textContent = "Old Temples";
     displayTemples(
-        temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900)
+        temples.filter(temple => new Date(temple.dedication).getFullYear() < 1900)
     );
 });
 
 document.querySelector("#new").addEventListener("click", (event) => {
     title.textContent = "New Temples";
     displayTemples(
-        temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000)
+        temples.filter(temple => new Date(temple.dedication).getFullYear() > 2000)
     );
 });
 
 document.querySelector("#large").addEventListener("click", (event) => {
     title.textContent = "Large Temples";
     displayTemples(
-        temples.filter(temples => temple.area > 90000)
+        temples.filter(temple => temple.area > 90000)
     );
 });
 
 document.querySelector("#small").addEventListener("click", (event) => {
-    title.filter(temple => (temple.area < 10000)
+    title.textContent = "Small Temples";
+    displayTemples(
+    temples.filter(temple => temple.area < 10000)
     );
 });
 
 // Footer
 
-document.querySelector("#currentyear");
+const year = document.querySelector("#currentyear");
 year.textContent = new Date().getFullYear();
 
-document.querySelector("#lastModified").textContent='Last Modified: ${document.lastModified}';
+document.querySelector("#lastModified").textContent=`Last Modified: ${document.lastModified}`;
