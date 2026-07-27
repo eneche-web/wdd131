@@ -4,10 +4,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
     }
 
     header h1 {
         margin: 0;
+        font-size: 2rem;
     }
     #menu{
         display: none;
@@ -16,6 +20,7 @@
     .navigation{
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: 1rem;
     }
 
@@ -23,6 +28,7 @@
         display: block;
         padding: .8rem 1.2rem;
         border-radius: 6px;
+        font-weight: 500;
         transition: background-color .3s ease, color .3s ease, transform .2s ease;
     
     }
@@ -33,11 +39,18 @@
         transform: translateX(-2px);
     }
 
-    margin h2 {
+    main {
+        max-width: 1200px;
+        margin: 2rem auto;
+    }
+
+    main h2 {
         font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .temple-grid {
+        display: grid;
         grid-template-columns:repeat(3, 1fr);
         gap: 2rem;
     }
@@ -72,9 +85,15 @@
 }
 
 
-@media only screen and (min-width:75rem) {
+@media only screen and (min-width:48rem) {
     main {
             max-width: 1400px;
+    }
+
+    .navigation{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .temple-grid {

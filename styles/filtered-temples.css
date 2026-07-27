@@ -36,7 +36,7 @@ header{
 header h1 {
     font-family: "Merriweather", serif;
     text-align: center;
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -70,7 +70,7 @@ header h1 {
     color: #ffffff;
     text-decoration: none;
     padding: .8rem;
-    transition: .3s;
+    transition: background-color .3s ease;
     border-radius: 5px;
 }
 
@@ -133,7 +133,7 @@ section:hover {
 }
 
 
-img{
+.temple-card img {
     width: 100%;
     height: auto;
     display: block;
@@ -154,4 +154,8 @@ footer p {
 a:focus, button:focus {
     outline: 3px solid gold;
     outline-offset: 2px;
+}
+
+.navigation a, .temple-card {
+    transition: all .3s ease;
 }

@@ -1,7 +1,7 @@
 // Hamburger Menu
 
-const menuButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navigation');
+const menuButton = document.querySelector("#menu");
+const navigation = document.querySelector(".navigation");
 
 menuButton.addEventListener('click', () => {
     navigation.classList.toggle('open');
@@ -98,86 +98,122 @@ const temples = [
     }
 ];
 
-// Display Function
-
 const templeGrid = document.querySelector(".temple-grid");
+const pageTitle = document.querySelector("#.page-title");
+const homeLink = document.querySelector("#home");
+const oldLink = document.querySelector("#old");
+const newLink = document.querySelector("#new");
+const largeLink = document.querySelector("#large");
+const smallLink = document.querySelector("#small");
+
+/**
+ * Displays the temple cards on the page
+ * @param {Array} filteredTemples 
+ - The array of the temples to display.
+ */
 
 function
 displayTemples(filteredTemples) {
-    templeGrid.innerHTML = "";
-    filteredTemples.forEach((temple) => {
-        const card = document.createElement("section");
-        card.classList.add("temple-card");
-        const name = document.createElement("h3");
-        const location = document.createElement("p");
-        const dedication = document.createElement("p");
-        const area = document.createElement("p");
-        const image = document.createElement("img");
 
+    // Clear any existing temple cards
+    templeGrid.innerHTML = "";
+
+    // Loop through each temple object
+    filteredTemples.forEach((temple) => {
+
+        // Create the card
+        const card = document.createElement("section");
+
+        const name = document.createElement("h3");
         name.textContent = temple.templeName;
 
-        location.innerHTML = '<strong>Location:</strong> ${temple.dedicated}';
+        // Card content container
 
-        area.innerHTML = '<strong>Area:</strong> ${temple.area.toLocalString()} sq ft';
+        const content = document.createElement("div");
+        content.classList.add("card-content");
 
-        image.setAttribute("src", temple.imageUr1);
+        // Location
 
-        image.setAttribute("loading", "lazy");
+        const location = document.createElement("p");
+        location.innerHTML = '<strong>Location</strong> ${temple.location}';
 
-        image.setAttribute("width", "400");
+        // Dedication date
 
-        image.setAttribute("height", "250");
+        const dedication = document.createElement("p");
+        dedicated.innerHTML = '<strong>Dedicated:</strong> ${temple.dedicated}';
 
+        // Area
+
+        const area = Document.createElement("p")
+        area.innerHTML = '<strong>Area:</strong> ${temple.area.toLocalString()} square feet';
+
+        // Image
+
+        const image = document.createElement("img");
+        image.src = temple.imageUr1; image.alt = '${temple.templeName} Temple';
+        image.loading = "lazy";
+        image.width = 400;
+        image.height = 250;
+
+        //Handle broken image links
+        image.onerror = function(){
+            this.src = "images/placeholder.webp";
+            this.src = "Temple image unavailable";
+        };
+
+        // Build or assembel the card
+
+
+        content.appendChild(location);
+        content.appendChild(dedicated);
+        content.appendChild(area);
         card.appendChild(name);
-        card.appendChild(location);
-        card.appendChild(dedication);
-        card.appendChild(area);
+        card.appendChild(content);
         card.appendChild(image);
+
+        // Add the card to the page
+
 
         templeGrid.appendChild(card);
 
-        
     });
+
 }
-
-
-//Display All Temples
-
-
+// Display all temples when the page first loads
 displayTemples(temples);
 
 // Navigation Buttons
 
-const title = document.querySelector("#page-title");
+const title = document.querySelector(".page-title");
 
-document.querySelector("#home").addEventListener("click", () =>{
+document.querySelector("#home").addEventListener("click", (event) =>{
     title.textContent= "Home";
 
     displayTemples(temples);
 });
 
-document.querySelector("#old").addEventListener("cllick", () => {
+document.querySelector("#old").addEventListener("cllick", (event) => {
     title.textContent = "Old Temples";
     displayTemples(
         temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900)
     );
 });
 
-document.querySelector("#new").addEventListener("click", () => {
+document.querySelector("#new").addEventListener("click", (event) => {
     title.textContent = "New Temples";
     displayTemples(
         temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000)
     );
 });
 
-document.querySelector("#large").addEventListener("click", () => {
+document.querySelector("#large").addEventListener("click", (event) => {
     title.textContent = "Large Temples";
     displayTemples(
         temples.filter(temples => temple.area > 90000)
     );
 });
 
-document.querySelector("#small").addEventListener("clicl", () => {
+document.querySelector("#small").addEventListener("click", (event) => {
     title.filter(temple => (temple.area < 10000)
     );
 });
