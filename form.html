@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UFT-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Product review Form">
+        <meta name="autor" content="Eneche John">
+        <title>Product Review Form</title>
+        <link rel="stylessheet" href="styles/form.css">
+        <script src="scripts/form.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Product Review Form</h1>
+        </header>
+        <main>
+            <form method="get" action="review.html">
+                <div class="field">
+                    <label for="product">Product Name</label>
+                    <select id="product" name="product" required>
+                        <option value="" selected disabled>Select a product</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <p>Overall Rating</p>
+                    <label>
+                        <input type="radio" id="one" name="rating" value="1" required>⭐
+                    </label>
+
+                    <label>
+                        <input type="radio" id="two" name="rating" value="2">⭐⭐2
+                    </label>
+
+                    <label>
+                        <input type="radio" id="three" name="rating" value="3">⭐⭐⭐3
+                    </label>
+
+                    <label>
+                        <input type="radio" id="four" name="rating" value="4">⭐⭐⭐⭐4
+                    </label>
+
+                    <label>
+                        <input type="radio" id="five" name="rating" value="5">⭐⭐⭐⭐⭐
+                    </label>
+                </div>
+
+                <div class="field">
+
+                    <label for="installDate">
+                        Date of Installation
+                    </label>
+
+                    <input type="date" id="installDate" name="imstallDate" required>
+                </div>
+
+                <div class="field">
+                    <p>Useful Features</p>
+                    <label>
+                        <input type="checkbox" id="durability" name="features" value="Durability">Durability
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="performance" name="features" value="performance">Performance
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="designe" name="features" value="Design">Design
+                    </label>
+                </div>
+
+                <div class="field">
+                    <label for="review">Written Review</label>
+
+                    <textarea id="review" name="review" rows="6"></textarea>
+                </div>
+
+                <div class="field">
+
+                    <label for="username"></label>
+
+                    <input type="text" id="username" name="username">
+                </div>
+
+                <input type="submit" value="Submit Review">
+            </form>
+        </main>
+    
+        <footer>
+            <p>
+            &copy;
+            <span id="year"></span>
+            Eneche John
+            </p>
+            
+            s<p id="lastmodified"></p>
+        </footer>
+    </body>
+</html>
