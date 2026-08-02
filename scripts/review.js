@@ -1,11 +1,18 @@
+// Retrieve current review count
 let reviews = Number(localStorage.getItem("reviews")) || 0;
 
+// Increase the count
 reviews++;
 
-localStorage.setItem("reviews". reviews);
+// Save updated count
+localStorage.setItem("reviews", reviews);
 
+// Display review count
 document.querySelector("#reviewCount").textContent = reviews;
 
-document.querySelector("#year").textContent = new Date().getFullYear();
+// Footer Information
+document.querySelector("#year").textContent =
+new Date().getFullYear();
 
-document.querySelector("#lastModified").textContent = 'Last Modified: ${document.lastModified}';
+document.querySelector("#lastModified").textContent =
+`Last Modified: ${document.lastModified}`;

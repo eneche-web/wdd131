@@ -1,4 +1,5 @@
-const product =[
+// Product Array
+const products = [
     {
         id: "fc-1888",
         name: "Flux Capacitor"
@@ -9,7 +10,7 @@ const product =[
     },
     {
         id: "fs-1987",
-        name: "Time circuits"
+        name: "Time Circuits"
     },
     {
         id: "ac-2000",
@@ -17,22 +18,25 @@ const product =[
     },
     {
         id: "jj-1969",
-        name: " w   rap Equalizer"
+        name: "Warp Equalizer"
     }
 ];
 
-
+// Populate Product Select Menu
 const productSelect = document.querySelector("#product");
 
-product.forEach(product => {
+products.forEach(product => {
     const option = document.createElement("option");
 
     option.value = product.id;
     option.textContent = product.name;
 
     productSelect.appendChild(option);
-})
+});
 
-document.querySelector("#year").textContent = new Date().getFullYear();
+// Footer Information
+document.querySelector("#year").textContent =
+new Date().getFullYear();
 
-document.querySelector("#lastModified").textContent = 'Last Modified: ${document.lastModified}';
+document.querySelector("#lastModified").textContent =
+`Last Modified: ${document.lastModified}`;
