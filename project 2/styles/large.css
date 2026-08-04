@@ -1,0 +1,424 @@
+/* ==========================================================
+   EMPIRICAL INTEGRATED SERVICE LTD
+   large.css
+   Responsive Layouts
+   ========================================================== */
+
+
+/* ==========================================================
+   TABLETS (768px and above)
+   ========================================================== */
+
+@media screen and (min-width:768px){
+
+/* ---------- Typography ---------- */
+
+h1{
+    font-size:3.5rem;
+}
+
+h2{
+    font-size:2.5rem;
+}
+
+.section{
+    padding:6rem 0;
+}
+
+/* ---------- Header ---------- */
+
+.menu-toggle{
+    display:none;
+}
+
+.main-navigation{
+    margin-left:auto;
+}
+
+.nav-menu{
+
+    position:static;
+
+    display:flex !important;
+
+    flex-direction:row;
+
+    width:auto;
+
+    background:transparent;
+
+    box-shadow:none;
+
+    gap:1.5rem;
+
+}
+
+.nav-menu li{
+
+    border:none;
+
+}
+
+.nav-menu a{
+
+    padding:.5rem;
+
+}
+
+.site-header .btn{
+
+    display:inline-flex;
+
+    margin-left:2rem;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+    padding:8rem 0;
+
+}
+
+.hero-grid{
+
+    grid-template-columns:1.1fr .9fr;
+
+}
+
+.hero-content{
+
+    text-align:left;
+
+}
+
+.hero-text{
+
+    margin-left:0;
+
+}
+
+.hero-buttons{
+
+    flex-direction:row;
+
+    justify-content:flex-start;
+
+}
+
+.hero-features{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.hero-feature{
+
+    justify-content:flex-start;
+
+}
+
+.hero-stats{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ---------- Business ---------- */
+
+.business-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* ---------- About ---------- */
+
+.about-preview-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+/* ---------- Services ---------- */
+
+.service-row{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.service-row.reverse .service-image{
+
+    order:2;
+
+}
+
+.service-row.reverse .service-content{
+
+    order:1;
+
+}
+
+/* ---------- Highlights ---------- */
+
+.highlights-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* ---------- Projects ---------- */
+
+.projects-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* ---------- Products ---------- */
+
+.products-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* ---------- Statistics ---------- */
+
+.stats-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ---------- Why Choose Us ---------- */
+
+.why-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* ---------- Contact ---------- */
+
+.contact-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+/* ---------- Footer ---------- */
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* ==========================================================
+   DESKTOP (1024px and above)
+   ========================================================== */
+
+@media screen and (min-width:1024px){
+
+.container{
+
+    width:min(92%,1280px);
+
+}
+
+/* ---------- Business ---------- */
+
+.business-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ---------- Highlights ---------- */
+
+.highlights-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ---------- Projects ---------- */
+
+.projects-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ---------- Products ---------- */
+
+.products-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ---------- Why Choose Us ---------- */
+
+.why-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+/* ---------- Testimonials ---------- */
+
+.testimonials-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+/* ---------- Footer ---------- */
+
+.footer-grid{
+
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero-content h1{
+
+    font-size:4.5rem;
+
+}
+
+.hero-text{
+
+    font-size:1.15rem;
+
+    max-width:650px;
+
+}
+
+.hero-image img{
+
+    max-width:650px;
+
+}
+
+/* ---------- Hover Effects ---------- */
+
+.business-card:hover,
+.project-card:hover,
+.product-card:hover,
+.highlight-card:hover,
+.why-card:hover,
+.testimonial-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP (1280px and above)
+   ========================================================== */
+
+@media screen and (min-width:1280px){
+
+.container{
+
+    width:min(90%,1400px);
+
+}
+
+.hero{
+
+    min-height:85vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-content h1{
+
+    font-size:5rem;
+
+}
+
+.hero-text{
+
+    font-size:1.2rem;
+
+}
+
+.section{
+
+    padding:7rem 0;
+
+}
+
+}
+
+
+/* ==========================================================
+   ULTRA-WIDE MONITORS
+   ========================================================== */
+
+@media screen and (min-width:1600px){
+
+.container{
+
+    max-width:1500px;
+
+}
+
+.hero-content h1{
+
+    font-size:5.5rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   LANDSCAPE PHONES
+   ========================================================== */
+
+@media screen and (max-height:500px) and (orientation:landscape){
+
+.hero{
+
+    padding:5rem 0;
+
+}
+
+.hero-grid{
+
+    gap:2rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   END OF FILE
+   ========================================================== */

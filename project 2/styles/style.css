@@ -1,0 +1,3419 @@
+/* ==========================================================
+   EMPIRICAL INTEGRATED SERVICE LTD
+   Main Stylesheet (Mobile First)
+   Author: John Eneche
+   ========================================================== */
+
+
+/* ==========================================================
+   CSS RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    font-size:100%;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    font-size:1rem;
+    line-height:1.7;
+    color:#222222;
+    background:#ffffff;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+picture{
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    background:none;
+}
+
+textarea{
+    resize:vertical;
+}
+
+iframe{
+    width:100%;
+    border:none;
+}
+
+
+/* ==========================================================
+   ROOT VARIABLES
+   ========================================================== */
+
+:root{
+
+    /* Brand Colors */
+
+    --primary:#003366;
+    --secondary:#F4B400;
+    --accent:#009966;
+
+    --dark:#222222;
+    --gray:#666666;
+    --light:#F8F9FA;
+    --white:#FFFFFF;
+
+    /* Typography */
+
+    --font-main:"Poppins",sans-serif;
+
+    /* Spacing */
+
+    --space-xs:.5rem;
+    --space-sm:1rem;
+    --space-md:2rem;
+    --space-lg:4rem;
+    --space-xl:6rem;
+
+    /* Border Radius */
+
+    --radius-sm:6px;
+    --radius:12px;
+    --radius-lg:20px;
+
+    /* Shadows */
+
+    --shadow-sm:0 5px 15px rgba(0,0,0,.08);
+
+    --shadow-md:0 10px 30px rgba(0,0,0,.12);
+
+    --shadow-lg:0 20px 40px rgba(0,0,0,.18);
+
+    /* Animation */
+
+    --transition:.35s ease-in-out;
+
+}
+
+
+/* ==========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    color:var(--primary);
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:1rem;
+
+}
+
+h1{
+
+    font-size:2.5rem;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+}
+
+h3{
+
+    font-size:1.5rem;
+
+}
+
+p{
+
+    margin-bottom:1rem;
+    color:var(--gray);
+
+}
+
+strong{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
+
+.container{
+
+    width:min(90%,1200px);
+    margin-inline:auto;
+
+}
+
+.section{
+
+    padding:5rem 0;
+
+}
+
+.section-header{
+
+    text-align:center;
+    margin-bottom:3rem;
+
+}
+
+.section-subtitle{
+
+    display:inline-block;
+
+    color:var(--secondary);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.5rem;
+
+    padding:.9rem 2rem;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+
+/* ==========================================================
+   CARDS
+   ========================================================== */
+
+.business-card,
+.project-card,
+.product-card,
+.why-card,
+.highlight-card,
+.testimonial-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.business-card:hover,
+.project-card:hover,
+.product-card:hover,
+.why-card:hover,
+.highlight-card:hover,
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+
+/* ==========================================================
+   ICONS
+   ========================================================== */
+
+.business-icon i,
+.why-card i,
+.highlight-card i{
+
+    font-size:2.5rem;
+
+    color:var(--secondary);
+
+    margin-bottom:1rem;
+
+}
+
+
+/* ==========================================================
+   LINKS
+   ========================================================== */
+
+.read-more{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-top:1rem;
+
+    transition:var(--transition);
+
+}
+
+.read-more:hover{
+
+    color:var(--secondary);
+
+}
+
+
+/* ==========================================================
+   IMAGES
+   ========================================================== */
+
+.service-image img,
+.hero-image img,
+.about-preview-image img,
+.project-card img,
+.product-card img{
+
+    border-radius:var(--radius);
+
+}
+
+
+/* ==========================================================
+   FORMS
+   ========================================================== */
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:1rem;
+
+    border:1px solid #dddddd;
+
+    border-radius:var(--radius-sm);
+
+    margin-bottom:1rem;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 3px rgba(244,180,0,.2);
+
+}
+
+
+/* ==========================================================
+   UTILITIES
+   ========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-2{
+
+    margin-top:2rem;
+
+}
+
+.mb-2{
+
+    margin-bottom:2rem;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.site-header{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:var(--white);
+
+    box-shadow:var(--shadow-sm);
+
+    z-index:1000;
+
+}
+
+.header-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    min-height:90px;
+
+    gap:1rem;
+
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:170px;
+
+    height:auto;
+
+}
+
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
+
+.main-navigation{
+
+    position:relative;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:absolute;
+
+    top:100%;
+
+    right:0;
+
+    width:280px;
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-md);
+
+    overflow:hidden;
+
+    display:none;
+
+}
+
+.nav-menu.show{
+
+    display:flex;
+
+}
+
+.nav-menu li{
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.nav-menu li:last-child{
+
+    border-bottom:none;
+
+}
+
+.nav-menu a{
+
+    display:block;
+
+    padding:1rem 1.5rem;
+
+    font-weight:600;
+
+    color:var(--dark);
+
+    transition:var(--transition);
+
+}
+
+.nav-menu a:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.nav-menu a.active{
+
+    color:var(--secondary);
+
+}
+
+
+/* ==========================================================
+   MOBILE MENU BUTTON
+   ========================================================== */
+
+.menu-toggle{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-size:1.3rem;
+
+    transition:var(--transition);
+
+}
+
+.menu-toggle:hover{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+}
+
+
+/* ==========================================================
+   HEADER BUTTON
+   ========================================================== */
+
+.site-header .btn{
+
+    display:none;
+
+}
+
+
+/* ==========================================================
+   NAVIGATION HOVER EFFECT
+   ========================================================== */
+
+.nav-menu a::after{
+
+    content:"";
+
+    display:block;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--secondary);
+
+    transition:width .3s ease;
+
+    margin-top:4px;
+
+}
+
+.nav-menu a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+.menu-toggle:focus-visible,
+.nav-menu a:focus-visible,
+.site-header .btn:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   HEADER ANIMATION
+   ========================================================== */
+
+.site-header{
+
+    animation:slideDown .5s ease;
+
+}
+
+@keyframes slideDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL SCREEN IMPROVEMENTS
+   ========================================================== */
+
+@media (max-width:479px){
+
+    .logo img{
+
+        width:140px;
+
+    }
+
+    .nav-menu{
+
+        width:240px;
+
+    }
+
+}
+
+/* ==========================================================
+   HERO SECTION
+   ========================================================== */
+
+.hero{
+
+    position:relative;
+
+    background:linear-gradient(
+        rgba(0,51,102,.85),
+        rgba(0,51,102,.85)
+    ),
+    url("../images/hero-bg.webp") center/cover no-repeat;
+
+    color:var(--white);
+
+    padding:6rem 0;
+
+    overflow:hidden;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.15);
+
+    z-index:1;
+
+}
+
+.hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    gap:3rem;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+   ========================================================== */
+
+.hero-content{
+
+    text-align:center;
+
+}
+
+.hero-tagline{
+
+    display:inline-block;
+
+    padding:.4rem 1rem;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:1.5rem;
+
+    color:var(--secondary);
+
+}
+
+.hero-content h1{
+
+    color:var(--white);
+
+    font-size:2.8rem;
+
+    line-height:1.15;
+
+    margin-bottom:1.5rem;
+
+}
+
+.hero-text{
+
+    max-width:650px;
+
+    margin:0 auto 2rem;
+
+    color:#f2f2f2;
+
+    font-size:1.05rem;
+
+}
+
+
+/* ==========================================================
+   HERO BUTTONS
+   ========================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    align-items:center;
+
+    margin-bottom:2.5rem;
+
+}
+
+.hero-buttons .btn{
+
+    width:100%;
+
+    max-width:260px;
+
+}
+
+
+/* ==========================================================
+   HERO FEATURES
+   ========================================================== */
+
+.hero-features{
+
+    display:grid;
+
+    gap:1rem;
+
+}
+
+.hero-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.75rem;
+
+    font-weight:500;
+
+}
+
+.hero-feature i{
+
+    color:var(--secondary);
+
+    font-size:1.1rem;
+
+}
+
+
+/* ==========================================================
+   HERO IMAGE
+   ========================================================== */
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    animation:floatImage 5s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   HERO ANIMATIONS
+   ========================================================== */
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-content{
+
+    animation:fadeLeft .8s ease forwards;
+
+}
+
+.hero-image{
+
+    animation:fadeRight .8s ease forwards;
+
+}
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   HERO SCROLL INDICATOR
+   ========================================================== */
+
+.scroll-down{
+
+    margin-top:3rem;
+
+    text-align:center;
+
+}
+
+.scroll-down a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:2px solid var(--white);
+
+    color:var(--white);
+
+    transition:var(--transition);
+
+}
+
+.scroll-down a:hover{
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+    color:var(--dark);
+
+}
+
+
+/* ==========================================================
+   HERO STATS
+   ========================================================== */
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+    margin-top:3rem;
+
+}
+
+.hero-stat{
+
+    text-align:center;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(6px);
+
+    border-radius:var(--radius);
+
+    padding:1.25rem;
+
+}
+
+.hero-stat h3{
+
+    color:var(--secondary);
+
+    font-size:2rem;
+
+    margin-bottom:.25rem;
+
+}
+
+.hero-stat p{
+
+    color:var(--white);
+
+    margin:0;
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   HERO DECORATION
+   ========================================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    top:-60px;
+
+    right:-60px;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:rgba(244,180,0,.12);
+
+    border-radius:50%;
+
+    bottom:-40px;
+
+    left:-40px;
+
+}
+
+/* ==========================================================
+   BUSINESS OVERVIEW
+   ========================================================== */
+
+.business-overview{
+
+    padding:5rem 0;
+
+    background:var(--light);
+
+}
+
+.business-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+.business-card{
+
+    padding:2rem;
+
+    text-align:center;
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.business-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.business-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 1.5rem;
+
+    border-radius:50%;
+
+    background:rgba(0,51,102,.08);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.business-icon i{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+}
+
+.business-card h3{
+
+    margin-bottom:1rem;
+
+    color:var(--primary);
+
+}
+
+.business-card p{
+
+    margin-bottom:1.5rem;
+
+}
+
+.business-card .read-more{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.business-card .read-more:hover{
+
+    color:var(--secondary);
+
+}
+
+
+/* ==========================================================
+   ABOUT PREVIEW
+   ========================================================== */
+
+.about-preview{
+
+    padding:6rem 0;
+
+    background:var(--white);
+
+}
+
+.about-preview-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+    align-items:center;
+
+}
+
+.about-preview-image{
+
+    text-align:center;
+
+}
+
+.about-preview-image img{
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.about-preview-content{
+
+    text-align:left;
+
+}
+
+.about-preview-content h2{
+
+    margin-bottom:1.5rem;
+
+}
+
+.about-preview-content p{
+
+    margin-bottom:1.25rem;
+
+}
+
+.about-preview-content .btn{
+
+    margin-top:1rem;
+
+}
+
+
+/* ==========================================================
+   SECTION DIVIDER
+   ========================================================== */
+
+.about-preview::before{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:5px;
+
+    background:var(--secondary);
+
+    margin:0 auto 3rem;
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================================
+   SERVICE TAGS
+   ========================================================== */
+
+.service-tag{
+
+    display:inline-block;
+
+    padding:.35rem 1rem;
+
+    background:rgba(244,180,0,.15);
+
+    color:var(--primary);
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+
+/* ==========================================================
+   IMAGE EFFECTS
+   ========================================================== */
+
+.about-preview-image img,
+.business-card{
+
+    transition:var(--transition);
+
+}
+
+.about-preview-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* ==========================================================
+   SECTION ANIMATION
+   ========================================================== */
+
+.business-card,
+.about-preview-image,
+.about-preview-content{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   BUSINESS CARD ICON ANIMATION
+   ========================================================== */
+
+.business-card:hover .business-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+    transition:var(--transition);
+
+}
+
+
+/* ==========================================================
+   ABOUT BUTTON
+   ========================================================== */
+
+.about-preview .btn-primary{
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.about-preview .btn-primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ==========================================================
+   SPACING ADJUSTMENTS
+   ========================================================== */
+
+.business-overview .section-header{
+
+    margin-bottom:2rem;
+
+}
+
+.about-preview-content .section-subtitle{
+
+    margin-bottom:1rem;
+
+}
+/* ==========================================================
+   SERVICES SECTION
+   ========================================================== */
+
+.services{
+
+    background:var(--light);
+
+    padding:6rem 0;
+
+}
+
+.service-row{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2.5rem;
+
+    align-items:center;
+
+    margin-bottom:5rem;
+
+}
+
+.service-row:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================================
+   SERVICE IMAGE
+   ========================================================== */
+
+.service-image{
+
+    overflow:hidden;
+
+    border-radius:var(--radius-lg);
+
+}
+
+.service-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:var(--radius-lg);
+
+    transition:transform .5s ease;
+
+}
+
+.service-row:hover .service-image img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================================
+   SERVICE CONTENT
+   ========================================================== */
+
+.service-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.service-content h3{
+
+    margin-bottom:1rem;
+
+    color:var(--primary);
+
+}
+
+.service-content p{
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================================
+   SERVICE LIST
+   ========================================================== */
+
+.service-list{
+
+    display:grid;
+
+    gap:.85rem;
+
+    margin-bottom:2rem;
+
+}
+
+.service-list li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+    color:var(--dark);
+
+    font-weight:500;
+
+}
+
+.service-list i{
+
+    color:var(--accent);
+
+    font-size:1rem;
+
+    flex-shrink:0;
+
+}
+
+
+/* ==========================================================
+   SERVICE BUTTON
+   ========================================================== */
+
+.service-content .btn{
+
+    align-self:flex-start;
+
+}
+
+
+/* ==========================================================
+   SERVICE TAG
+   ========================================================== */
+
+.service-tag{
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:.45rem 1rem;
+
+    margin-bottom:1rem;
+
+    border-radius:999px;
+
+    background:rgba(0,51,102,.08);
+
+    color:var(--primary);
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ==========================================================
+   SERVICE HIGHLIGHTS
+   ========================================================== */
+
+.service-highlights{
+
+    padding:6rem 0;
+
+    background:var(--white);
+
+}
+
+.highlights-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+}
+
+.highlight-card{
+
+    text-align:center;
+
+    padding:2.5rem 2rem;
+
+    border-radius:var(--radius);
+
+    background:var(--white);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.highlight-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.highlight-card i{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:80px;
+
+    height:80px;
+
+    margin-bottom:1.5rem;
+
+    border-radius:50%;
+
+    background:rgba(0,153,102,.10);
+
+    color:var(--accent);
+
+    font-size:2rem;
+
+}
+
+.highlight-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.highlight-card p{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================================
+   SERVICE HOVER EFFECTS
+   ========================================================== */
+
+.service-row{
+
+    transition:var(--transition);
+
+}
+
+.service-row:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ==========================================================
+   IMAGE SHADOW
+   ========================================================== */
+
+.service-image img{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+.service-content .btn:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   SECTION SPACING
+   ========================================================== */
+
+.service-row + .service-row{
+
+    padding-top:2rem;
+
+    border-top:1px solid rgba(0,0,0,.08);
+
+}
+
+
+/* ==========================================================
+   OPTIONAL ALTERNATING BACKGROUND
+   ========================================================== */
+
+.service-row:nth-child(even){
+
+    background:rgba(255,255,255,.4);
+
+    border-radius:var(--radius-lg);
+
+    padding:2rem;
+
+}
+
+
+/* ==========================================================
+   FEATURED PROJECTS
+   ========================================================== */
+
+.featured-projects{
+
+    padding:6rem 0;
+
+    background:var(--white);
+
+}
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+.project-card{
+
+    overflow:hidden;
+
+    border-radius:var(--radius);
+
+    background:var(--white);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.project-card figure{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.project-card img{
+
+    width:100%;
+
+    transition:transform .5s ease;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.project-card figcaption{
+
+    padding:1.5rem;
+
+}
+
+.project-category{
+
+    display:inline-block;
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    padding:.35rem .85rem;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+.section-action{
+
+    text-align:center;
+
+    margin-top:3rem;
+/* ==========================================================
+   PROJECT FILTER
+   ========================================================== */
+
+.filter-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+    margin-bottom:3rem;
+
+}
+
+.filter-btn{
+
+    padding:.8rem 1.5rem;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#eeeeee;
+
+    color:var(--dark);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.filter-btn:hover{
+
+    background:var(--secondary);
+
+}
+
+.filter-btn.active{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.project-card.hide{
+
+    display:none;
+
+}
+
+.project-card.show{
+
+    display:block;
+
+    animation:fadeUp .5s ease;
+
+}
+}
+
+
+
+
+
+
+/* ==========================================================
+   PRODUCTS
+   ========================================================== */
+
+.products{
+
+    background:var(--light);
+
+    padding:6rem 0;
+
+}
+
+.products-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+.product-card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    padding:2rem;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.product-card img{
+
+    width:220px;
+
+    margin:0 auto 1.5rem;
+
+    transition:transform .4s ease;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.product-card h3{
+
+    margin-bottom:.75rem;
+
+}
+
+.product-card p{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================================
+   COMPANY STATISTICS
+   ========================================================== */
+
+.statistics{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    padding:5rem 0;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+.stat-card{
+
+    text-align:center;
+
+}
+
+.stat-card h2{
+
+    color:var(--secondary);
+
+    font-size:2.8rem;
+
+    margin-bottom:.5rem;
+
+}
+
+.stat-card p{
+
+    color:var(--white);
+
+    margin:0;
+
+}
+
+
+/* ==========================================================
+   WHY CHOOSE US
+   ========================================================== */
+
+.why-choose-us{
+
+    background:var(--white);
+
+    padding:6rem 0;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+.why-card{
+
+    text-align:center;
+
+    padding:2.5rem 2rem;
+
+    border-radius:var(--radius);
+
+    background:var(--white);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.why-card i{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 1.5rem;
+
+    border-radius:50%;
+
+    background:rgba(0,51,102,.08);
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.why-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.why-card p{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================================
+   COUNTER STYLE
+   ========================================================== */
+
+.counter{
+
+    display:inline-block;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   CARD ANIMATIONS
+   ========================================================== */
+
+.project-card,
+.product-card,
+.why-card{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+
+/* ==========================================================
+   IMAGE RADIUS
+   ========================================================== */
+
+.project-card img,
+.product-card img{
+
+    border-radius:var(--radius-sm);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+.project-card:focus-within,
+.product-card:focus-within,
+.why-card:focus-within{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:5px;
+
+}
+
+
+/* ==========================================================
+   SPACING
+   ========================================================== */
+
+.products .section-header,
+.featured-projects .section-header,
+.why-choose-us .section-header{
+
+    margin-bottom:3rem;
+
+}
+
+
+/* ==========================================================
+   TESTIMONIALS
+   ========================================================== */
+
+.testimonials{
+
+    padding:6rem 0;
+
+    background:var(--light);
+
+}
+
+.testimonials-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+.testimonial-card{
+
+    background:var(--white);
+
+    padding:2rem;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.rating{
+
+    display:flex;
+
+    gap:.35rem;
+
+    margin-bottom:1.25rem;
+
+}
+
+.rating i{
+
+    color:var(--secondary);
+
+    font-size:1rem;
+
+}
+
+.testimonial-card p{
+
+    font-style:italic;
+
+    margin-bottom:1.5rem;
+
+}
+
+.testimonial-card h4{
+
+    color:var(--primary);
+
+    margin-bottom:.25rem;
+
+}
+
+.testimonial-card span{
+
+    color:var(--gray);
+
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================================
+   CALL TO ACTION
+   ========================================================== */
+
+.cta{
+
+    background:linear-gradient(
+        rgba(0,51,102,.95),
+        rgba(0,51,102,.95)
+    ),
+    url("../images/cta-bg.webp") center/cover no-repeat;
+
+    color:var(--white);
+
+    padding:6rem 0;
+
+    text-align:center;
+
+}
+
+.cta-content{
+
+    max-width:800px;
+
+    margin:0 auto;
+
+}
+
+.cta h2{
+
+    color:var(--white);
+
+    margin-bottom:1rem;
+
+}
+
+.cta p{
+
+    color:#f4f4f4;
+
+    margin-bottom:2rem;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.cta-buttons .btn{
+
+    width:100%;
+
+    max-width:260px;
+
+}
+
+
+/* ==========================================================
+   CONTACT PREVIEW
+   ========================================================== */
+
+.contact-preview{
+
+    padding:6rem 0;
+
+    background:var(--white);
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+    align-items:start;
+
+}
+
+
+/* ==========================================================
+   CONTACT INFORMATION
+   ========================================================== */
+
+.contact-information h2{
+
+    margin-bottom:1rem;
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.contact-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.contact-item i{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(0,51,102,.08);
+
+    color:var(--primary);
+
+    font-size:1.3rem;
+
+    flex-shrink:0;
+
+}
+
+.contact-item h4{
+
+    margin-bottom:.3rem;
+
+}
+
+.contact-item p{
+
+    margin:0;
+
+}
+
+
+/* ==========================================================
+   CONTACT FORM
+   ========================================================== */
+
+.contact-form{
+
+    background:var(--light);
+
+    padding:2rem;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.contact-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    border:1px solid #dddddd;
+
+    background:var(--white);
+
+    transition:var(--transition);
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:var(--secondary);
+
+}
+
+.contact-form textarea{
+
+    min-height:180px;
+
+}
+
+.contact-form button{
+
+    align-self:flex-start;
+
+}
+
+
+/* ==========================================================
+   GOOGLE MAP
+   ========================================================== */
+
+.map-section{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+.map-section iframe{
+
+    width:100%;
+
+    height:450px;
+
+    display:block;
+
+}
+
+
+/* ==========================================================
+   CONTACT ANIMATIONS
+   ========================================================== */
+
+.contact-information,
+.contact-form{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+
+/* ==========================================================
+   TESTIMONIAL ANIMATION
+   ========================================================== */
+
+.testimonial-card{
+
+    animation:fadeUp .7s ease both;
+
+}
+
+
+/* ==========================================================
+   HOVER EFFECTS
+   ========================================================== */
+
+.contact-item:hover i{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    transform:scale(1.08);
+
+}
+
+.contact-item i{
+
+    transition:var(--transition);
+
+}
+
+
+/* ==========================================================
+   FORM ACCESSIBILITY
+   ========================================================== */
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.contact-form button:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:3px;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.site-footer{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    padding:5rem 0 2rem;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+    margin-bottom:3rem;
+
+}
+
+.footer-column h3{
+
+    color:var(--secondary);
+
+    margin-bottom:1.5rem;
+
+}
+
+.footer-column p{
+
+    color:#e6e6e6;
+
+    margin-bottom:1rem;
+
+    line-height:1.8;
+
+}
+
+.footer-logo{
+
+    width:180px;
+
+    margin-bottom:1.5rem;
+
+}
+
+.footer-column ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.85rem;
+
+}
+
+.footer-column ul li{
+
+    color:#f4f4f4;
+
+}
+
+.footer-column ul li a{
+
+    color:#f4f4f4;
+
+    transition:var(--transition);
+
+}
+
+.footer-column ul li a:hover{
+
+    color:var(--secondary);
+
+    padding-left:6px;
+
+}
+
+
+/* ==========================================================
+   SOCIAL MEDIA
+   ========================================================== */
+
+.social-links{
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.10);
+
+    color:var(--white);
+
+    font-size:1.1rem;
+
+    transition:var(--transition);
+
+}
+
+.social-links a:hover{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ==========================================================
+   FOOTER DIVIDER
+   ========================================================== */
+
+.site-footer hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin:2rem 0;
+
+}
+
+
+/* ==========================================================
+   FOOTER BOTTOM
+   ========================================================== */
+
+.footer-bottom{
+
+    text-align:center;
+
+}
+
+.footer-bottom p{
+
+    color:#d9d9d9;
+
+    margin:0;
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   SCROLL TO TOP BUTTON
+   ========================================================== */
+
+.scroll-top{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+    box-shadow:var(--shadow-md);
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:var(--transition);
+
+    z-index:999;
+
+}
+
+.scroll-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.scroll-top:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+
+/* ==========================================================
+   LOADING FADE
+   ========================================================== */
+
+.fade-in{
+
+    animation:fadeIn .8s ease-in-out;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SECTION REVEAL
+   ========================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   UTILITY CLASSES
+   ========================================================== */
+
+.shadow{
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.rounded{
+
+    border-radius:var(--radius);
+
+}
+
+.bg-primary{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.bg-light{
+
+    background:var(--light);
+
+}
+
+.text-primary{
+
+    color:var(--primary);
+
+}
+
+.text-secondary{
+
+    color:var(--secondary);
+
+}
+
+.text-white{
+
+    color:var(--white);
+
+}
+
+.text-gray{
+
+    color:var(--gray);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+a:focus-visible,
+button:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:4px;
+
+}
+
+::selection{
+
+    background:var(--secondary);
+
+    color:var(--dark);
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}/* ==========================================================
+   PART 9 - FINAL POLISH & OPTIMIZATION
+   ========================================================== */
+
+
+/* ==========================================================
+   GENERAL TRANSITIONS
+   ========================================================== */
+
+img,
+button,
+a,
+input,
+textarea,
+select,
+.business-card,
+.project-card,
+.product-card,
+.highlight-card,
+.why-card,
+.testimonial-card{
+
+    transition:var(--transition);
+
+}
+
+
+/* ==========================================================
+   IMAGE OPTIMIZATION
+   ========================================================== */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    vertical-align:middle;
+
+}
+
+figure{
+
+    margin:0;
+
+}
+
+
+/* ==========================================================
+   HOVER EFFECTS
+   ========================================================== */
+
+img:hover{
+
+    opacity:.98;
+
+}
+
+button:hover{
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   SPACING UTILITIES
+   ========================================================== */
+
+.pt-1{padding-top:1rem;}
+.pt-2{padding-top:2rem;}
+.pt-3{padding-top:3rem;}
+.pt-4{padding-top:4rem;}
+
+.pb-1{padding-bottom:1rem;}
+.pb-2{padding-bottom:2rem;}
+.pb-3{padding-bottom:3rem;}
+.pb-4{padding-bottom:4rem;}
+
+.mt-1{margin-top:1rem;}
+.mt-2{margin-top:2rem;}
+.mt-3{margin-top:3rem;}
+.mt-4{margin-top:4rem;}
+
+.mb-1{margin-bottom:1rem;}
+.mb-2{margin-bottom:2rem;}
+.mb-3{margin-bottom:3rem;}
+.mb-4{margin-bottom:4rem;}
+
+
+/* ==========================================================
+   FLEX UTILITIES
+   ========================================================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.flex-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ==========================================================
+   GRID UTILITIES
+   ========================================================== */
+
+.grid{
+
+    display:grid;
+
+}
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+.grid-4{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+
+/* ==========================================================
+   BORDER UTILITIES
+   ========================================================== */
+
+.border{
+
+    border:1px solid #dddddd;
+
+}
+
+.border-top{
+
+    border-top:1px solid #dddddd;
+
+}
+
+.border-bottom{
+
+    border-bottom:1px solid #dddddd;
+
+}
+
+
+/* ==========================================================
+   VISUALLY HIDDEN
+   ========================================================== */
+
+.visually-hidden{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    padding:0;
+
+    margin:-1px;
+
+    overflow:hidden;
+
+    clip:rect(0,0,0,0);
+
+    white-space:nowrap;
+
+    border:0;
+
+}
+
+
+/* ==========================================================
+   LOADING PLACEHOLDER
+   ========================================================== */
+
+.loading{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.loading::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.4),
+        transparent
+    );
+
+    animation:loading 1.5s infinite;
+
+}
+
+@keyframes loading{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+   ========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eeeeee;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+
+/* ==========================================================
+   PRINT STYLES
+   ========================================================== */
+
+@media print{
+
+    *{
+
+        background:transparent !important;
+
+        color:#000 !important;
+
+        box-shadow:none !important;
+
+        text-shadow:none !important;
+
+    }
+
+    .menu-toggle,
+    .scroll-top,
+    .cta,
+    .social-links,
+    button{
+
+        display:none !important;
+
+    }
+
+    a{
+
+        text-decoration:underline;
+
+    }
+
+}
+
+
+/* ==========================================================
+   HIGH CONTRAST MODE
+   ========================================================== */
+
+@media (prefers-contrast: more){
+
+    body{
+
+        color:#000;
+
+        background:#fff;
+
+    }
+
+    .btn{
+
+        border:2px solid #000;
+
+    }
+
+}
+
+
+/* ==========================================================
+   FINAL ACCESSIBILITY
+   ========================================================== */
+
+:focus{
+
+    scroll-margin-top:120px;
+
+}
+/* ==========================================================
+   CONTACT FORM VALIDATION
+   ========================================================== */
+
+.field-error{
+
+    display:block;
+
+    color:#d62828;
+
+    font-size:.85rem;
+
+    margin-top:-12px;
+
+    margin-bottom:15px;
+
+}
+
+.success{
+
+    color:#198754;
+
+    font-weight:600;
+
+    margin-top:20px;
+
+}
+
+.error{
+
+    color:#d62828;
+
+    font-weight:600;
+
+    margin-top:20px;
+
+}
+
+
+
+/* ==========================================================
+   END OF FILE
+   ========================================================== */
+
+
+
+
+
+
+
+
+
+
